@@ -25,6 +25,36 @@ void exibirCarta(int numero, char estado, char codigo[4], char nome[50], int pop
   printf("\nPIB per Capita: %.2f reais", pib_per_capita);
 }
 
+void lerCarta(int numero, char *estado, char codigo[4], char nome[50], int *populacao, float *area, float *pib, int *pontos, float *densidade, float *pib_per_capita) {
+  printf("----------Carta %d----------", numero);
+
+  printf("\nDigite o estado da cidade(A-H): ");
+  scanf(" %c", estado);
+
+  printf("\nDigite o codigo da cidade: ");
+  scanf("%3s", codigo);
+
+  getchar(); // Limpa buffer do teclado
+
+  printf("\nDigite o nome da cidade: ");
+  fgets(nome, 50, stdin);
+
+  printf("\nDigite a populacao da cidade: ");
+  scanf("%i", populacao);
+
+  printf("\nDigite a area da cidade: ");
+  scanf("%f", area);
+
+  printf("\nDigite o PIB da cidade: ");
+  scanf("%f", pib);
+
+  printf("\nDigite a quantidade de pontos turisticos: ");
+  scanf("%i", pontos);
+
+  *densidade = calcularDensidade(*populacao, *area);
+  *pib_per_capita = calcularPibPerCapita(*pib, *populacao);
+}
+
 int main() {
   // Área para definição das variáveis para armazenar as propriedades das cidades
   char carta1_estado, carta1_codigo[4], carta1_nome_cidade[50];
@@ -36,63 +66,8 @@ int main() {
 
   // Área para entrada de dados
 
-  printf("----------Carta 1----------");
-
-  printf("\nDigite o estado da cidade(A-H): ");
-  scanf("%c", &carta1_estado);
-
-  printf("\nDigite o codigo da cidade: ");
-  scanf("%3s", carta1_codigo);
-
-  getchar(); // Limpa buffer do teclado
-
-  printf("\nDigite o nome da cidade: ");
-  fgets(carta1_nome_cidade, 50, stdin);
-
-  printf("\nDigite a populacao da cidade: ");
-  scanf("%i", &carta1_populacao);
-
-  printf("\nDigite a area da cidade: ");
-  scanf("%f", &carta1_area);
-
-  printf("\nDigite o PIB da cidade: ");
-  scanf("%f", &carta1_pib);
-
-  printf("\nDigite a quantidade de pontos turisticos: ");
-  scanf("%i", &carta1_qtd_pontos_turisticos);
-
-  carta1_densidade = calcularDensidade(carta1_populacao, carta1_area);
-  carta1_pib_per_capita = calcularPibPerCapita(carta1_pib, carta1_populacao);
-
-  printf("\n----------Carta 2----------");
-
-  getchar(); // Limpa buffer do teclado
-
-  printf("\nDigite o estado da cidade(A-H): ");
-  scanf("%c", &carta2_estado);
-
-  printf("\nDigite o codigo da cidade: ");
-  scanf("%3s", carta2_codigo);
-
-  getchar(); // Limpa buffer do teclado
-
-  printf("\nDigite o nome da cidade: ");
-  fgets(carta2_nome_cidade, 50, stdin);
-
-  printf("\nDigite a populacao da cidade: ");
-  scanf("%i", &carta2_populacao);
-
-  printf("\nDigite a area da cidade: ");
-  scanf("%f", &carta2_area);
-
-  printf("\nDigite o PIB da cidade: ");
-  scanf("%f", &carta2_pib);
-
-  printf("\nDigite a quantidade de pontos turisticos: ");
-  scanf("%i", &carta2_qtd_pontos_turisticos);
-
-  carta2_densidade = calcularDensidade(carta2_populacao, carta2_area);
-  carta2_pib_per_capita = calcularPibPerCapita(carta2_pib, carta2_populacao);
+  lerCarta(1, &carta1_estado, carta1_codigo, carta1_nome_cidade, &carta1_populacao, &carta1_area, &carta1_pib, &carta1_qtd_pontos_turisticos, &carta1_densidade, &carta1_pib_per_capita);
+  lerCarta(2, &carta2_estado, carta2_codigo, carta2_nome_cidade, &carta2_populacao, &carta2_area, &carta2_pib, &carta2_qtd_pontos_turisticos, &carta2_densidade, &carta2_pib_per_capita);
 
   // Área para exibição dos dados da cidade
   exibirCarta(1, carta1_estado, carta1_codigo, carta1_nome_cidade, carta1_populacao, carta1_area, carta1_pib, carta1_qtd_pontos_turisticos, carta1_densidade, carta1_pib_per_capita);

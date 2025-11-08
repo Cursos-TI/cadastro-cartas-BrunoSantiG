@@ -40,7 +40,7 @@ int main() {
   printf("\n----------Carta 2----------");
 
   getchar();
-  
+
   printf("\nDigite o estado da cidade(A-H): ");
   scanf("%c", &carta2_estado);
 
@@ -65,6 +65,23 @@ int main() {
   scanf("%i", &carta2_qtd_pontos_turisticos);
 
   // Área para exibição dos dados da cidade
+  printf("\n\nCarta 1:\n");
+  printf("\nEstado: %c", carta1_estado);
+  printf("\nCodigo: %s", carta1_codigo);
+  printf("\nNome da Cidade: %s", carta1_nome_cidade);
+  printf("Populacao: %d", carta1_populacao);
+  printf("\nArea: %.2f km²", carta1_area);
+  printf("\nPIB: %.2f bilhões de reais", carta1_pib);
+  printf("\nNúmero de Pontos Turísticos: %d", carta1_qtd_pontos_turisticos);
+
+  printf("\n\nCarta 2:\n");
+  printf("\nEstado: %c", carta2_estado);
+  printf("\nCodigo: %s", carta2_codigo);
+  printf("\nNome da Cidade: %s", carta2_nome_cidade);
+  printf("Populacao: %d", carta2_populacao);
+  printf("\nArea: %.2f km²", carta2_area);
+  printf("\nPIB: %.2f bilhões de reais", carta2_pib);
+  printf("\nNúmero de Pontos Turísticos: %d\n", carta2_qtd_pontos_turisticos);
 
 return 0;
 } 

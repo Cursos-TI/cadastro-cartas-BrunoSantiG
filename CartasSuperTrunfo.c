@@ -12,6 +12,19 @@ float calcularPibPerCapita(float pib, int populacao) {
   return (pib * 1000000000) / populacao;
 }
 
+void exibirCarta(int numero, char estado, char codigo[4], char nome[50], int populacao, float area, float pib, int pontos, float densidade, float pib_per_capita) {
+  printf("\nCarta %d:", numero);
+  printf("\nEstado: %c", estado);
+  printf("\nCodigo: %s", codigo);
+  printf("\nNome da Cidade: %s", nome);
+  printf("Populacao: %d", populacao);
+  printf("\nArea: %.2f km²", area);
+  printf("\nPIB: %.2f bilhões de reais", pib);
+  printf("\nNúmero de Pontos Turísticos: %d", pontos);
+  printf("\nDensidade Populacional: %.2f hab/km²", densidade);
+  printf("\nPIB per Capita: %.2f reais", pib_per_capita);
+}
+
 int main() {
   // Área para definição das variáveis para armazenar as propriedades das cidades
   char carta1_estado, carta1_codigo[4], carta1_nome_cidade[50];
@@ -82,27 +95,9 @@ int main() {
   carta2_pib_per_capita = calcularPibPerCapita(carta2_pib, carta2_populacao);
 
   // Área para exibição dos dados da cidade
-  printf("\nCarta 1:");
-  printf("\nEstado: %c", carta1_estado);
-  printf("\nCodigo: %s", carta1_codigo);
-  printf("\nNome da Cidade: %s", carta1_nome_cidade);
-  printf("Populacao: %d", carta1_populacao);
-  printf("\nArea: %.2f km²", carta1_area);
-  printf("\nPIB: %.2f bilhões de reais", carta1_pib);
-  printf("\nNúmero de Pontos Turísticos: %d", carta1_qtd_pontos_turisticos);
-  printf("\nDensidade Populacional: %.2f hab/km²", carta1_densidade);
-  printf("\nPIB per Capita: %.2f reais", carta1_pib_per_capita);
-
-  printf("\n\nCarta 2:");
-  printf("\nEstado: %c", carta2_estado);
-  printf("\nCodigo: %s", carta2_codigo);
-  printf("\nNome da Cidade: %s", carta2_nome_cidade);
-  printf("Populacao: %d", carta2_populacao);
-  printf("\nArea: %.2f km²", carta2_area);
-  printf("\nPIB: %.2f bilhões de reais", carta2_pib);
-  printf("\nNúmero de Pontos Turísticos: %d", carta2_qtd_pontos_turisticos);
-  printf("\nDensidade Populacional: %.2f hab/km²", carta2_densidade);
-  printf("\nPIB per Capita: %.2f reais", carta2_pib_per_capita);
+  exibirCarta(1, carta1_estado, carta1_codigo, carta1_nome_cidade, carta1_populacao, carta1_area, carta1_pib, carta1_qtd_pontos_turisticos, carta1_densidade, carta1_pib_per_capita);
+  printf("\n");
+  exibirCarta(2, carta2_estado, carta2_codigo, carta2_nome_cidade, carta2_populacao, carta2_area, carta2_pib, carta2_qtd_pontos_turisticos, carta2_densidade, carta2_pib_per_capita);
 
 return 0;
 } 

@@ -18,7 +18,7 @@ int main() {
   scanf("%c", &carta1_estado);
 
   printf("\nDigite o codigo da cidade: ");
-  scanf("%3s", &carta1_codigo);
+  scanf("%3s", carta1_codigo);
 
   getchar();
 
@@ -36,6 +36,33 @@ int main() {
 
   printf("\nDigite a quantidade de pontos turisticos: ");
   scanf("%i", &carta1_qtd_pontos_turisticos);
+
+  printf("\n----------Carta 2----------");
+
+  getchar();
+  
+  printf("\nDigite o estado da cidade(A-H): ");
+  scanf("%c", &carta2_estado);
+
+  printf("\nDigite o codigo da cidade: ");
+  scanf("%3s", carta2_codigo);
+
+  getchar();
+
+  printf("\nDigite o nome da cidade: ");
+  fgets(carta2_nome_cidade, 50, stdin);
+
+  printf("\nDigite a populacao da cidade: ");
+  scanf("%i", &carta2_populacao);
+
+  printf("\nDigite a area da cidade: ");
+  scanf("%f", &carta2_area);
+
+  printf("\nDigite o PIB da cidade: ");
+  scanf("%f", &carta2_pib);
+
+  printf("\nDigite a quantidade de pontos turisticos: ");
+  scanf("%i", &carta2_qtd_pontos_turisticos);
 
   // Área para exibição dos dados da cidade
 

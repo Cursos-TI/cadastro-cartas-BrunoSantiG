@@ -6,9 +6,12 @@
 
 int main() {
   // Área para definição das variáveis para armazenar as propriedades das cidades
-  char carta1_estado, carta1_codigo[4], carta1_nome_cidade[50], carta2_codigo[4], carta2_nome_cidade[50], carta2_estado;
-  int carta1_populacao, carta1_qtd_pontos_turisticos, carta2_populacao, carta2_qtd_pontos_turisticos;
-  float carta1_area, carta1_pib, carta2_area, carta2_pib;
+  char carta1_estado, carta1_codigo[4], carta1_nome_cidade[50];
+  char carta2_estado, carta2_codigo[4], carta2_nome_cidade[50];
+  int carta1_populacao, carta1_qtd_pontos_turisticos;
+  int carta2_populacao, carta2_qtd_pontos_turisticos;
+  float carta1_area, carta1_pib;
+  float carta2_area, carta2_pib;
 
   // Área para entrada de dados
 
@@ -20,7 +23,7 @@ int main() {
   printf("\nDigite o codigo da cidade: ");
   scanf("%3s", carta1_codigo);
 
-  getchar();
+  getchar(); // Limpa buffer do teclado
 
   printf("\nDigite o nome da cidade: ");
   fgets(carta1_nome_cidade, 50, stdin);
@@ -39,7 +42,7 @@ int main() {
 
   printf("\n----------Carta 2----------");
 
-  getchar();
+  getchar(); // Limpa buffer do teclado
 
   printf("\nDigite o estado da cidade(A-H): ");
   scanf("%c", &carta2_estado);
@@ -47,7 +50,7 @@ int main() {
   printf("\nDigite o codigo da cidade: ");
   scanf("%3s", carta2_codigo);
 
-  getchar();
+  getchar(); // Limpa buffer do teclado
 
   printf("\nDigite o nome da cidade: ");
   fgets(carta2_nome_cidade, 50, stdin);
